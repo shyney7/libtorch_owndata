@@ -4,7 +4,7 @@
 
 int main() {
 
-OwnData test("input.csv","output.csv",1);
+OwnData test("input.csv","output.csv");
 
 std::cout << "Shapeprint x2data: " << std::endl;
 for ( const auto &row : test.x2data )

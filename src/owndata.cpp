@@ -6,15 +6,21 @@
 #include "../include/csv2vector.hpp"
 
 
-    OwnData::OwnData(std::string inputpath, std::string outputpath, bool shuff=0) {
+    OwnData::OwnData(std::string inputpath, std::string outputpath, bool shuff) {
         
         x2data = csv2Dvector(inputpath);
         y2data = csv2Dvector(outputpath);
 
         if(shuff) {
-            auto rng_seed = std::default_random_engine {};
-            std::shuffle(x2data.begin(), x2data.end(), rng_seed);
-            std::shuffle(y2data.begin(), y2data.end(), rng_seed);
+            std::random_device r;
+            std::seed_seq rng_seed{r(),r(),r(),r(),r(),r(),r(),r()};
+
+            //erzeugen von random engines mit den seeds die gleich sind:
+            std::mt19937 eng1(rng_seed);
+            auto eng2 = eng1;
+
+            std::shuffle(x2data.begin(), x2data.end(), eng1);
+            std::shuffle(y2data.begin(), y2data.end(), eng2);
         }
     }
 
