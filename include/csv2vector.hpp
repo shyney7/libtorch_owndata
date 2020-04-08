@@ -4,8 +4,8 @@
 
 //----------------------Funktionsprototyp Onelinevector----------------------
 
-std::vector<float> onelinevector(const std::vector<std::vector<float>> &invector);
+std::vector<double> onelinevector(const std::vector<std::vector<double>> &invector);
 
 //------------------------Funktionsprototyp csv2Dvector----------------------
 
-std::vector<std::vector<float>> csv2Dvector(std::string inputFileName);
+std::vector<std::vector<double>> csv2Dvector(std::string inputFileName);

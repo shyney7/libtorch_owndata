@@ -5,9 +5,9 @@
 
 //--------------------------2D vector 2 1D--------------------------------------------
 
-std::vector<float> onelinevector(const std::vector<std::vector<float>> &invector) {
+std::vector<double> onelinevector(const std::vector<std::vector<double>> &invector) {
 
-  std::vector<float> v1d;
+  std::vector<double> v1d;
   if (invector.size() == 0)
     return v1d;
   v1d.reserve(invector.size() * invector.front().size());
@@ -21,10 +21,10 @@ std::vector<float> onelinevector(const std::vector<std::vector<float>> &invector
 
 //-------------------------csv2vector Funktionsdefinition--------------------------
 
-std::vector<std::vector<float>> csv2Dvector(std::string inputFileName) {
+std::vector<std::vector<double>> csv2Dvector(std::string inputFileName) {
   using namespace std;
 
-  vector<vector<float>> data;
+  vector<vector<double>> data;
   ifstream inputFile(inputFileName);
   int l = 0;
 
@@ -35,7 +35,7 @@ std::vector<std::vector<float>> csv2Dvector(std::string inputFileName) {
       break;
     if (s[0] != '#') {
       istringstream ss(s);
-      vector<float> record;
+      vector<double> record;
 
       while (ss) {
         string line;
